@@ -1,12 +1,25 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 import 'package:project_fcii/auth/onboarding/model/onbording_model.dart';
+import 'package:project_fcii/screens/login_page.dart';
 
 part 'onboarding_controller_state.dart';
 
 class OnboardingControllerCubit extends Cubit<OnboardingControllerState> {
   OnboardingControllerCubit() : super(OnboardingControllerInitial());
+  PageController pageController = PageController();
+  void onChangeToNext() {
+    pageController.nextPage(
+        duration: Duration(seconds: 2), curve: Curves.bounceIn);
+  }
+
+  void onCallSkip(context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return LoginPage();
+    }));
+  }
 
   List data = [
     OnbordingModel(
