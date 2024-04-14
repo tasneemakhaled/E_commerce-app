@@ -11,6 +11,10 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Sign Up'),
+          backgroundColor: Colors.brown,
+        ),
         //backgroundColor: Color(0xff165a72),
         body: Container(
             decoration: const BoxDecoration(

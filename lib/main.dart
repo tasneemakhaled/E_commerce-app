@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:project_fcii/auth/onboarding/view/page/onbording_page.dart';
 import 'package:project_fcii/screens/login_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences sharedPrefrences = await SharedPreferences.getInstance();
+  bool onBoarding = sharedPrefrences.getBool('onboarding') ?? false;
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LoginPage(),
-    );
-  }
+  MaterialApp materialApp = MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: onBoarding ? const LoginPage() : const OnbordingPage(),
+  );
+  runApp(materialApp);
 }

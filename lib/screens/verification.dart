@@ -6,14 +6,18 @@ class VerificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(
-              "https://i.pinimg.com/564x/c3/50/c7/c350c71fc51ba3e0ddb5120997eceeda.jpg"),
-          fit: BoxFit.fill,
+        appBar: AppBar(
+          title: const Text('Verification'),
+          backgroundColor: Colors.brown,
         ),
-      ),
-    ));
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                  "https://i.pinimg.com/564x/c3/50/c7/c350c71fc51ba3e0ddb5120997eceeda.jpg"),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ));
   }
 }
