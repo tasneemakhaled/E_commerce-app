@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_fcii/components/custom_button.dart';
 import 'package:project_fcii/components/custom_text_field.dart';
-import 'package:project_fcii/screens/reset_password.dart';
+import 'package:project_fcii/features/auth/Reset/reset_password.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});

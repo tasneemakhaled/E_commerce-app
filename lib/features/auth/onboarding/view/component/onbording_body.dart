@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project_fcii/auth/onboarding/controller/cubit/onboarding_controller_cubit.dart';
+import 'package:project_fcii/features/auth/onboarding/controller/cubit/onboarding_controller_cubit.dart';
 
 class OnboardingBody extends StatelessWidget {
   OnboardingBody({super.key, required this.controller});

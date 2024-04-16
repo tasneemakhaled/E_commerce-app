@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
-import 'package:project_fcii/auth/onboarding/model/onbording_model.dart';
-import 'package:project_fcii/screens/login_page.dart';
+import 'package:project_fcii/features/auth/onboarding/model/onbording_model.dart';
+import 'package:project_fcii/features/auth/login/login_page.dart';
 
 part 'onboarding_controller_state.dart';
 
