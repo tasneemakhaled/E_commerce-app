@@ -11,6 +11,8 @@ void main() async {
   MaterialApp materialApp = MaterialApp(
     debugShowCheckedModeBanner: false,
     home: onBoarding ? const LoginPage() : const OnbordingPage(),
+    // onGenerateRoute: ,
+    // onGenerateInitialRoutes: ,
   );
   runApp(materialApp);
 }
