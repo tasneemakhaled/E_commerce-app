@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:project_fcii/components/custom_button.dart';
 import 'package:project_fcii/components/custom_text_field.dart';
-import 'package:project_fcii/screens/forget_password.dart';
-import 'package:project_fcii/screens/register_page.dart';
+import 'package:project_fcii/features/auth/forget/forget_password.dart';
+import 'package:project_fcii/features/auth/registeration/view/page/register_page.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
+  const LoginPage({super.key, required this.username});
+  final String username;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(
                               builder: (BuildContext context) {
-                            return RegisterPage();
+                            return RegisterationPage();
                           }));
                         },
                         child: const Text(

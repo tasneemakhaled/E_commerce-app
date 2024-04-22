@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_fcii/components/custom_button.dart';
 import 'package:project_fcii/components/custom_text_field.dart';
 
-import 'package:project_fcii/screens/verification.dart';
+import 'package:project_fcii/features/auth/Verification/verification.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
