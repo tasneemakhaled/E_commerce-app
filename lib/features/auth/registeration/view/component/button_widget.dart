@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +29,7 @@ class ButtonWidget extends StatelessWidget {
                   ),
                   onPressed: () {
                     // to verification
-                    controller.onPressedConfirmButton();
+                    controller.onPressedConfirmButton(context);
                   },
                   child: const Text('Confirm')),
               Row(
@@ -47,7 +49,9 @@ class ButtonWidget extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (BuildContext context) {
-                        return LoginPage();
+                        return LoginPage(
+                          username: '',
+                        );
                       }));
                     },
                   ),
