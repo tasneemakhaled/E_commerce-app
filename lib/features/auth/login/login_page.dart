@@ -6,8 +6,8 @@ import 'package:project_fcii/features/auth/forget/forget_password.dart';
 import 'package:project_fcii/features/auth/registeration/view/page/register_page.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
+  const LoginPage({super.key, required this.username});
+  final String username;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

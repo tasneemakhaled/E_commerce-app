@@ -1,6 +1,10 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_fcii/core/utilis/validator.dart';
 import 'package:project_fcii/features/auth/registeration/controller/cubit/registeration_cubit.dart';
