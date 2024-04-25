@@ -8,6 +8,7 @@ import 'package:project_fcii/features/auth/login/login_page.dart';
 import 'package:project_fcii/features/auth/registeration/view/page/register_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// main method
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences sharedPrefrences = await SharedPreferences.getInstance();
