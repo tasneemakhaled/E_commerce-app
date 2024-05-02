@@ -6,28 +6,11 @@ import 'package:project_fcii/features/dashboard/modules/model/entity/product_mod
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseRepo {
-  DatabaseRepo._init();
-
-  static DatabaseRepo? _singletoneObject;
+  //DatabaseRepo._init();
   static late Database _database;
-
-  static Future<DatabaseRepo> get instance async {
-    if (_singletoneObject == null) {
-      await _initDatabase();
-      _singletoneObject = DatabaseRepo._init();
-    }
-    return _singletoneObject!;
-  }
-
-  ///create database
-  static Future<void> _initDatabase() async {
-    ///get database path on the target device
+  static Future<void> initDatabase() async {
     final String databasePath = await getDatabasesPath();
-
-    ///add your database files
     final String path = databasePath + "/products.db";
-    // final path = join(databasePath, 'users.db');
-
     _database = await openDatabase(
       path,
       version: 1,
