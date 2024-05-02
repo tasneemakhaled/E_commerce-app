@@ -9,7 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_fcii/core/utilis/validator.dart';
 import 'package:project_fcii/features/auth/registeration/controller/cubit/registeration_cubit.dart';
 import 'package:project_fcii/features/auth/registeration/view/component/text_name_formatter.dart';
-import 'package:project_fcii/screens/validation.dart';
 
 class BodyWidgets extends StatelessWidget {
   BodyWidgets({super.key, required this.controller});
