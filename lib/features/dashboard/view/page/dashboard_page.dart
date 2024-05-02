@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_controller.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_state.dart';
-import 'package:project_fcii/features/dashboard/modules/view/page/user_page.dart';
+import 'package:project_fcii/features/dashboard/modules/view/page/product_page.dart';
 
 class DashbordPage extends StatelessWidget {
   final List<String> titles = const ['Home', 'Users', 'Services'];
@@ -34,8 +34,8 @@ class DashbordPage extends StatelessWidget {
               controller: controller.pageController,
               onPageChanged: controller.onChangeTabIndex,
               children: const [
-                Text('Products'),
-                UserPage(),
+                ProductPage(),
+                ProductPage(),
                 Text('Favourites'),
                 Text('Cart'),
               ],

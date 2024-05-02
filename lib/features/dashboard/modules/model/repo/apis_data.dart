@@ -1,5 +1,5 @@
-import 'package:project_fcii/features/dashboard/model/repo/parent_data.dart';
-import 'package:project_fcii/features/dashboard/model/entity/user_model.dart';
+import 'package:project_fcii/features/dashboard/modules/model/repo/parent_data.dart';
+import 'package:project_fcii/features/dashboard/modules/model/entity/product_model.dart';
 
 class APIsRepo extends ParentRepo {
   @override
@@ -9,7 +9,7 @@ class APIsRepo extends ParentRepo {
   }
 
   @override
-  Future<List<UserModel>> fetch() {
+  Future<List<ProductModel>> fetch() {
     // TODO: implement fetch
     throw UnimplementedError();
   }
