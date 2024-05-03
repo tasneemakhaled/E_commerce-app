@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:project_fcii/features/dashboard/model/repo/parent_data.dart';
-import 'package:project_fcii/features/dashboard/model/entity/user_model.dart';
+import 'package:project_fcii/features/dashboard/modules/model/repo/parent_data.dart';
+import 'package:project_fcii/features/dashboard/modules/model/entity/product_model.dart';
 
 class FirebaseRepo extends ParentRepo {
   static FirebaseRepo instance = FirebaseRepo._init();
@@ -8,7 +8,7 @@ class FirebaseRepo extends ParentRepo {
   FirebaseRepo._init();
 
   @override
-  Future<List<UserModel>> fetch() async {
+  Future<List<ProductModel>> fetch() async {
     return await FirebaseFirestore.instance
         .collection('users')
         .get()
@@ -21,7 +21,7 @@ class FirebaseRepo extends ParentRepo {
           'address': data.containsKey('adress') ? data['address'] : "XXXX",
           'id': e.reference.id,
         };
-        return UserModel.fromJson(m);
+        return ProductModel.fromJson(m);
       }).toList();
     });
   }
