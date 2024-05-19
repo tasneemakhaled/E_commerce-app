@@ -1,19 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project_fcii/features/dashboard/modules/products%20copy/controller/cubit/favourite_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
-import 'package:project_fcii/features/dashboard/modules/view/components/product_widget.dart';
+import 'package:project_fcii/features/dashboard/modules/view/components/favourite_widget.dart';
 
-class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+class FavouritePage extends StatelessWidget {
+  const FavouritePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProductCubit(),
-      child: BlocBuilder<ProductCubit, ProductState>(
+      create: (context) => FavouriteCubit.instance,
+      child: BlocBuilder<FavouriteCubit, FavouriteState>(
         builder: (context, state) {
-          final ProductCubit controller = context.read<ProductCubit>();
+          final FavouriteCubit controller = context.read<FavouriteCubit>();
           return Scaffold(
             body: state is ProductLoading
                 ? const CircularProgressIndicator()
@@ -26,7 +27,7 @@ class ProductPage extends StatelessWidget {
                         ),
                       )
                     : ListView.builder(
-                        itemBuilder: (_, int index) => ProductItemWidget(
+                        itemBuilder: (_, int index) => FavouriteItemWidget(
                           productModel: controller.products[index],
                           controller: controller,
                         ),

@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'dart:ffi';
+import 'dart:typed_data';
 import 'package:project_fcii/features/dashboard/modules/model/repo/apis_data.dart';
 import 'package:project_fcii/features/dashboard/modules/model/repo/parent_data.dart';
 import 'package:project_fcii/features/dashboard/modules/model/entity/product_model.dart';
@@ -58,7 +59,7 @@ cart INTEGER,
       required String desc,
       required int quantity,
       required int availableQuantity,
-      required Uint8 image}) {
+      required Uint8List image}) {
     _database.insert('products', {
       'name': name,
       'description': desc,
