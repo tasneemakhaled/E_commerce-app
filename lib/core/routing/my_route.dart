@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_fcii/features/auth/login/login_page.dart';
 import 'package:project_fcii/features/auth/onboarding/view/page/onbording_page.dart';
 import 'package:project_fcii/features/auth/registeration/view/page/register_page.dart';
+import 'package:project_fcii/features/dashboard/modules/new_product/view/page/new_product_page.dart';
 import 'package:project_fcii/features/dashboard/view/page/dashboard_page.dart';
 
 class MyRoutes {
@@ -28,7 +29,10 @@ class MyRoutes {
         return MaterialPageRoute<dynamic>(
           builder: (_) => const RegisterationPage(),
         );
-
+      case 'new_product':
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => const newProductPage(),
+        );
       default:
         return MaterialPageRoute<dynamic>(
           builder: (_) => const OnbordingPage(),

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_controller.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_state.dart';
-import 'package:project_fcii/features/dashboard/modules/view/page/product_page.dart';
+import 'package:project_fcii/features/dashboard/modules/view/page/favourite_page.dart';
 
 class DashbordPage extends StatelessWidget {
-  final List<String> titles = const ['Home', 'Users', 'Services'];
+  final List<String> titles = const ['products', 'favourite', 'cart'];
 
   const DashbordPage({super.key});
   @override
@@ -27,15 +27,20 @@ class DashbordPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, 'registration');
                     },
-                    icon: const Icon(CupertinoIcons.add))
+                    icon: const Icon(CupertinoIcons.add)),
+                IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'new product');
+                    },
+                    icon: const Icon(CupertinoIcons.plus)),
               ],
             ),
             body: PageView(
               controller: controller.pageController,
               onPageChanged: controller.onChangeTabIndex,
               children: const [
-                ProductPage(),
-                ProductPage(),
+                FavouritePage(),
+                FavouritePage(),
                 Text('Favourites'),
                 Text('Cart'),
               ],
