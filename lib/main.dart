@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:project_fcii/core/cubit/parent_cubit.dart';
+import 'package:project_fcii/core/my_theme.dart';
 import 'package:project_fcii/features/auth/Reset/reset_password.dart';
 import 'package:project_fcii/features/auth/onboarding/controller/cubit/onboarding_controller_cubit.dart';
 import 'package:project_fcii/features/auth/onboarding/view/page/onbording_page.dart';
@@ -14,6 +16,9 @@ void main() async {
   bool onBoarding = sharedPrefrences.getBool('onboarding') ?? false;
 
   MaterialApp materialApp = MaterialApp(
+    theme: MyTheme.instance.light,
+    darkTheme: MyTheme.instance.dark,
+    themeMode: ParentCubit.instance.themeMode,
     builder: DevicePreview.appBuilder,
     debugShowCheckedModeBanner: false,
     useInheritedMediaQuery: true,
