@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project_fcii/core/context_extension.dart';
+import 'package:project_fcii/core/utilis/context_extension.dart';
 import 'package:project_fcii/features/auth/Verification/verification.dart';
 import 'package:project_fcii/features/auth/login/login_page.dart';
 import 'package:project_fcii/features/auth/registeration/controller/cubit/registeration_cubit.dart';

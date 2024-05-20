@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:project_fcii/core/context_extension.dart';
+import 'package:project_fcii/core/utilis/context_extension.dart';
 import 'package:project_fcii/features/auth/Verification/controller/cubit/verification_cubit.dart';
 
 class VerificationPage extends StatelessWidget {
