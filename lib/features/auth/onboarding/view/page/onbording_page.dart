@@ -13,8 +13,10 @@ class OnbordingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: BlocProvider<OnboardingControllerCubit>(
-        create: (context) =>
-            OnboardingControllerCubit(OnboardingControllerState()),
+        create: (context) => OnboardingControllerCubit(
+            OnboardingControllerState(),
+            sharedPreferences: null,
+            data: []),
         child:
             BlocBuilder<OnboardingControllerCubit, OnboardingControllerState>(
           builder: (context, state) {
