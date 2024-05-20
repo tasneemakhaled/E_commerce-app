@@ -11,9 +11,9 @@ class ProductModel {
     desc = m['description'];
     image = m['image'];
     quantity = m['quantity'];
-    availableQuantity = m['availableQuantity'];
+    availableQuantity = m['available_quantity'];
     cart = m['cart'];
-    favorite = m['favorite'];
+    favorite = m['favourite'];
     id = m['id'];
   }
 }

@@ -59,7 +59,7 @@ flutter:
     - assets/logo/download (1).png
     - assets/lang/en.JSON
     - assets/lang/ar.JSON
-
+    - assets/images/onbording.jpeg
 flutter_native_splash:
   # color: "#42a5f5"
   background_image: "assets/images/image.jpg"
