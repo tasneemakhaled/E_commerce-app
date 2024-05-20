@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   MaterialApp materialApp = MaterialApp(
+    builder: DevicePreview.appBuilder,
     debugShowCheckedModeBanner: false,
     // home: DashboardPage(),
     onGenerateInitialRoutes: (_) => MyRoutes.initRoutes,

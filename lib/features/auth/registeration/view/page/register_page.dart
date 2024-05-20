@@ -5,9 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:path/path.dart';
 import 'package:project_fcii/components/custom_button.dart';
 import 'package:project_fcii/components/custom_text_field.dart';
+import 'package:project_fcii/core/build_context_extension.dart';
 import 'package:project_fcii/core/context_extension.dart';
+import 'package:project_fcii/core/cubit/parent_cubit.dart';
 import 'package:project_fcii/features/auth/registeration/controller/cubit/registeration_cubit.dart';
 import 'package:project_fcii/features/auth/registeration/view/component/body_widgets.dart';
 import 'package:project_fcii/features/auth/registeration/view/component/body_widgets.dart';
@@ -26,36 +29,44 @@ class RegisterationPage extends StatelessWidget {
           builder: (context, state) {
             final RegisterationCubit controller =
                 context.read<RegisterationCubit>();
-            return Scaffold(
-              appBar: AppBar(
-                title: const Text('Sign Up'),
-                backgroundColor: Colors.brown,
-              ),
-              bottomNavigationBar: SizedBox(
-                height: context.height / 4,
-                child: Container(
-                    color: const Color(0xff9FAD93),
-                    child: SizedBox(
-                      child: ButtonWidget(
-                        controller: controller,
+            return BlocProvider(
+              create: (context) => ParentCubit.instance,
+              child: BlocBuilder<ParentCubit, ParentState>(
+                builder: (context, state) {
+                  return Scaffold(
+                    appBar: AppBar(
+                      title: Text('Sign Up',
+                          style: Theme.of(context).textTheme.displayLarge),
+                      backgroundColor: Colors.brown,
+                    ),
+                    bottomNavigationBar: SizedBox(
+                      height: context.height / 4,
+                      child: Container(
+                          color: const Color(0xff9FAD93),
+                          child: SizedBox(
+                            child: ButtonWidget(
+                              controller: controller,
+                            ),
+                            height: 100,
+                          )),
+                    ),
+                    //backgroundColor: Color(0xff165a72),
+                    body: Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                              "https://i.pinimg.com/564x/c3/50/c7/c350c71fc51ba3e0ddb5120997eceeda.jpg"),
+                          fit: BoxFit.fill,
+                        ),
                       ),
-                      height: 100,
-                    )),
-              ),
-              //backgroundColor: Color(0xff165a72),
-              body: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        "https://i.pinimg.com/564x/c3/50/c7/c350c71fc51ba3e0ddb5120997eceeda.jpg"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                child: Container(
-                    color: const Color(0xff9FAD93),
-                    child: BodyWidgets(
-                      controller: controller,
-                    )),
+                      child: Container(
+                          color: const Color(0xff9FAD93),
+                          child: BodyWidgets(
+                            controller: controller,
+                          )),
+                    ),
+                  );
+                },
               ),
             );
           },

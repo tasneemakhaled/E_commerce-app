@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 
 class VerificationPage extends StatelessWidget {
   const VerificationPage({super.key});
@@ -7,7 +8,10 @@ class VerificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Verification'),
+          title: Text(
+            'Verification',
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
           backgroundColor: Colors.brown,
         ),
         body: Container(

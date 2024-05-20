@@ -57,6 +57,9 @@ flutter:
     # - images/a_dot_ham.jpeg
     - assets/images/image.jpg
     - assets/logo/download (1).png
+    - assets/lang/en.JSON
+    - assets/lang/ar.JSON
+
 flutter_native_splash:
   # color: "#42a5f5"
   background_image: "assets/images/image.jpg"
