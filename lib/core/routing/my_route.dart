@@ -31,7 +31,7 @@ class MyRoutes {
         );
       case 'new_product':
         return MaterialPageRoute<dynamic>(
-          builder: (_) => const newProductPage(),
+          builder: (_) => const NewProductPage(),
         );
       default:
         return MaterialPageRoute<dynamic>(

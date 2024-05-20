@@ -24,14 +24,14 @@ class DashbordPage extends StatelessWidget {
                 titles[controller.selectedTapIndex],
               ),
               actions: [
+                // IconButton(
+                //     onPressed: () {
+                //       Navigator.pushNamed(context, 'registration');
+                //     },
+                //     icon: const Icon(CupertinoIcons.add)),
                 IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, 'registration');
-                    },
-                    icon: const Icon(CupertinoIcons.add)),
-                IconButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'new product');
+                      Navigator.pushNamed(context, 'new_product');
                     },
                     icon: const Icon(CupertinoIcons.plus)),
               ],
