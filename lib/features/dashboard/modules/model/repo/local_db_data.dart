@@ -8,11 +8,11 @@ import 'package:sqflite/sqflite.dart';
 
 class DatabaseRepo {
   //DatabaseRepo._init();
-  static late Database _database;
+  static late Database database;
   static Future<void> initDatabase() async {
     final String databasePath = await getDatabasesPath();
     final String path = databasePath + "/products.db";
-    _database = await openDatabase(
+    database = await openDatabase(
       path,
       version: 1,
       onCreate: _createTables,
@@ -35,32 +35,28 @@ cart INTEGER,
   }
 
   Future<List<ProductModel>> fetchProducts() async {
-    log((await _database.getVersion()).toString());
-    return (await _database.query('products'))
+    log((await database.getVersion()).toString());
+    return (await database.query('products'))
         .map((e) => ProductModel.fromJson(e))
         .toList();
   }
 
   Future<List<ProductModel>> fetchFavoriteProducts() async {
-    return (await _database
-            .query('products', where: 'favorite=?', whereArgs: [1]))
+    return (await database
+            .query('products', where: 'favourite=?', whereArgs: [1]))
         .map((e) => ProductModel.fromJson(e))
         .toList();
   }
 
   Future<List<ProductModel>> fetchCartProducts() async {
-    return (await _database.query('products', where: 'cart=?', whereArgs: [1]))
+    return (await database.query('products', where: 'cart=?', whereArgs: [1]))
         .map((e) => ProductModel.fromJson(e))
         .toList();
   }
 
-  void insertProduct(
-      {required String name,
-      required String desc,
-      required int quantity,
-      required int availableQuantity,
-      required Uint8List image}) {
-    _database.insert('products', {
+  void insertProduct(String name, String desc, int quantity,
+      int availableQuantity, Uint8List image) {
+    database.insert('products', {
       'name': name,
       'description': desc,
       'quantity': quantity,
@@ -72,7 +68,7 @@ cart INTEGER,
   }
 
   Future<void> newQuantity(int qnt, int id) async {
-    await _database.update(
+    await database.update(
         'products',
         {
           'available_quantity': qnt,
@@ -82,7 +78,7 @@ cart INTEGER,
   }
 
   Future<void> updateCart(int val, int id) async {
-    await _database.update(
+    await database.update(
         'products',
         {
           'cart': val,
@@ -92,16 +88,16 @@ cart INTEGER,
   }
 
   Future<void> updateFavorite(int val, int id) async {
-    await _database.update(
+    await database.update(
         'products',
         {
-          'favorite': val,
+          'favourite': val,
         },
         where: 'id=?',
         whereArgs: [id]);
   }
 
   void deleteProduct(int id) {
-    _database.delete('products', where: 'id=?', whereArgs: [id]);
+    database.delete('products', where: 'id=?', whereArgs: [id]);
   }
 }
