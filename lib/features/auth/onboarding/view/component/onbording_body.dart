@@ -9,7 +9,13 @@ class OnboardingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Welcome to our App'),
+        Text(
+          'Welcome to our App',
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.brown,
+          ),
+        ),
         Expanded(
             child: BlocProvider<OnboardingControllerCubit>.value(
                 value: controller,

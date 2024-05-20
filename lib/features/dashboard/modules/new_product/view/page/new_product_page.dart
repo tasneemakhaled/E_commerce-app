@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path/path.dart';
 import 'package:project_fcii/features/dashboard/modules/new_product/cubit/new_product_cubit.dart';
 
-class newProductPage extends StatelessWidget {
-  const newProductPage({super.key});
+class NewProductPage extends StatelessWidget {
+  const NewProductPage({super.key});
 
   @override
   Widget build(BuildContext context) {
