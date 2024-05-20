@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project_fcii/features/dashboard/modules/products%20copy/controller/cubit/favourite_cubit.dart';
+import 'package:project_fcii/features/dashboard/modules/favourites/controller/cubit/favourite_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
-import 'package:project_fcii/features/dashboard/modules/view/components/favourite_widget.dart';
+import 'package:project_fcii/features/dashboard/modules/favourites/view%20favourite/components/favourite_widget.dart';
 
 class FavouritePage extends StatelessWidget {
   const FavouritePage({super.key});

@@ -3,14 +3,14 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_fcii/features/dashboard/modules/model/entity/product_model.dart';
-import 'package:project_fcii/features/dashboard/modules/products%20copy/controller/cubit/favourite_cubit.dart';
+import 'package:project_fcii/features/dashboard/modules/favourites/controller/cubit/favourite_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
 
-class FavouriteItemWidget extends StatelessWidget {
-  const FavouriteItemWidget(
+class ProductItemWidget extends StatelessWidget {
+  const ProductItemWidget(
       {super.key, required this.productModel, required this.controller});
   final ProductModel productModel;
-  final FavouriteCubit controller;
+  final ProductCubit controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -108,6 +108,18 @@ class FavouriteItemWidget extends StatelessWidget {
                                     productModel.id ?? 0, 1);
                               }
                             },
+                          ),
+                          InkWell(
+                            child: productModel.cart == 1
+                                ? const Icon(
+                                    CupertinoIcons.cart,
+                                    color: Colors.blue,
+                                  )
+                                : const Icon(
+                                    CupertinoIcons.cart,
+                                    color: Colors.blue,
+                                  ),
+                            onTap: () {},
                           ),
                           Container(
                             height: 30,

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_controller.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_state.dart';
-import 'package:project_fcii/features/dashboard/modules/view/page/favourite_page.dart';
+import 'package:project_fcii/features/dashboard/modules/favourites/view%20favourite/page/favourite_page.dart';
+import 'package:project_fcii/features/dashboard/modules/products/view%20Product/page/product_page.dart';
 
 class DashbordPage extends StatelessWidget {
   final List<String> titles = const ['products', 'favourite', 'cart'];
@@ -39,7 +40,7 @@ class DashbordPage extends StatelessWidget {
               controller: controller.pageController,
               onPageChanged: controller.onChangeTabIndex,
               children: const [
-                FavouritePage(),
+                ProductPage(),
                 FavouritePage(),
                 Text('Favourites'),
                 Text('Cart'),
