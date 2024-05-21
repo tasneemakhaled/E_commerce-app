@@ -10,14 +10,13 @@ class ProductCubit extends Cubit<ProductState> {
   ProductCubit() : super(ProductLoading()) {
     init();
   }
-  List<ProductModel> products = [];
+  List<ProductModel> productss = [];
   DatabaseRepo repo = DatabaseRepo();
   Future<void> init() async {
     emit(ProductLoading());
     await DatabaseRepo.initDatabase();
-
-    products = await repo.fetchProducts();
-    if (products.isEmpty) {
+    productss = await repo.fetchProducts();
+    if (productss.isEmpty) {
       emit(ProductEmpty());
     } else {
       emit(ProductLoaded());
