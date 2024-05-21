@@ -29,10 +29,10 @@ class ProductPage extends StatelessWidget {
                       )
                     : ListView.builder(
                         itemBuilder: (_, int index) => ProductItemWidget(
-                          productModel: controller.products[index],
+                          productModel: controller.productss[index],
                           controller: controller,
                         ),
-                        itemCount: controller.products.length,
+                        itemCount: controller.productss.length,
                       ),
           );
         },

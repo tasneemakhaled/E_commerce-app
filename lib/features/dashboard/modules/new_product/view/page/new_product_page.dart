@@ -53,11 +53,11 @@ class NewProductPage extends StatelessWidget {
                 ),
                 if (cubit.image != null)
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(40),
                     child: Image.file(
                       File(cubit.image!.path),
-                      height: 200,
-                      width: 200,
+                      height: 300,
+                      width: 300,
                       fit: BoxFit.fill,
                     ),
                   ),

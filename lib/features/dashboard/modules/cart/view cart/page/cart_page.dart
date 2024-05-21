@@ -6,8 +6,8 @@ import 'package:project_fcii/features/dashboard/modules/favourites/controller/cu
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/favourites/view%20favourite/components/favourite_widget.dart';
 
-class FavouritePage extends StatelessWidget {
-  const FavouritePage({super.key});
+class CartPage extends StatelessWidget {
+  const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class FavouritePage extends StatelessWidget {
                         ),
                       )
                     : ListView.builder(
-                        itemBuilder: (_, int index) => FavouriteItemWidget(
+                        itemBuilder: (_, int index) => CartItemWidget(
                           productModel: controller.products[index],
                           controller: controller,
                         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_controller.dart';
 import 'package:project_fcii/features/dashboard/controller/dashboard_state.dart';
+import 'package:project_fcii/features/dashboard/modules/cart/view%20cart/page/cart_page.dart';
 import 'package:project_fcii/features/dashboard/modules/favourites/view%20favourite/page/favourite_page.dart';
 import 'package:project_fcii/features/dashboard/modules/products/view%20Product/page/product_page.dart';
 
@@ -42,7 +43,7 @@ class DashbordPage extends StatelessWidget {
               children: const [
                 ProductPage(),
                 FavouritePage(),
-                Text('Favourites'),
+                CartPage(),
                 Text('Cart'),
               ],
             ),
