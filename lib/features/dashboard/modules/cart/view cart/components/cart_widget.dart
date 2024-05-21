@@ -6,8 +6,8 @@ import 'package:project_fcii/features/dashboard/modules/model/entity/product_mod
 import 'package:project_fcii/features/dashboard/modules/favourites/controller/cubit/favourite_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
 
-class FavouriteItemWidget extends StatelessWidget {
-  const FavouriteItemWidget(
+class CartItemWidget extends StatelessWidget {
+  const CartItemWidget(
       {super.key, required this.productModel, required this.controller});
   final ProductModel productModel;
   final CartCubit controller;
@@ -90,24 +90,16 @@ class FavouriteItemWidget extends StatelessWidget {
                         children: [
                           ///like
                           InkWell(
-                            child: productModel.favorite == 1
+                            child: productModel.cart == 1
                                 ? const Icon(
-                                    CupertinoIcons.heart_fill,
-                                    color: Colors.red,
+                                    CupertinoIcons.cart,
+                                    color: Colors.blue,
                                   )
                                 : const Icon(
-                                    CupertinoIcons.heart,
-                                    color: Colors.red,
+                                    CupertinoIcons.cart,
+                                    color: Colors.blue,
                                   ),
-                            onTap: () {
-                              if (productModel.favorite == 1) {
-                                controller.addItemToFavorite(
-                                    productModel.id ?? 0, 0);
-                              } else {
-                                controller.addItemToFavorite(
-                                    productModel.id ?? 0, 1);
-                              }
-                            },
+                            onTap: () {},
                           ),
                           Container(
                             height: 30,

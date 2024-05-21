@@ -9,7 +9,7 @@ class DashboardController extends Cubit<DashboardState> {
   final PageController pageController = PageController();
 
   void onChangeTabIndex(int index) {
-    if (index == 2) {
+    if (index == 4) {
       throw 'dummy exception from mobile';
     }
     selectedTapIndex = index;

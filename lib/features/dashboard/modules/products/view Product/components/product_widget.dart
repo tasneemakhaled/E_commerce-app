@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:project_fcii/features/dashboard/modules/model/entity/product_model.dart';
 import 'package:project_fcii/features/dashboard/modules/favourites/controller/cubit/favourite_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
@@ -40,31 +41,33 @@ class ProductItemWidget extends StatelessWidget {
                               productModel.image ?? Uint8List(5),
                               height: 50,
                               width: 50,
-                              fit: BoxFit.fill,
+                              fit: BoxFit.cover,
                             ),
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                productModel.name ?? 'product',
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  productModel.name ?? 'product',
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                productModel.desc ?? 'description',
-                                style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.grey),
-                              ),
-                            ],
+                                Text(
+                                  productModel.desc ?? 'description',
+                                  style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.grey),
+                                ),
+                              ],
+                            ),
                           ),
                           const Spacer(),
                           Column(
