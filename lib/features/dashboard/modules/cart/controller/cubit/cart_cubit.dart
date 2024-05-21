@@ -32,8 +32,20 @@ class CartCubit extends Cubit<CartState> {
   //   emit(CartLoaded());
   // }
 
-  void addItemToCart(int id) {
-    repo.updateCart(1, id);
-    emit(CartLoaded());
+  // void addItemToCart(int id) {
+  //   repo.updateCart(1, id);
+  //   emit(CartLoaded());
+  // }
+  Future<void> addItemToCart(int id, int val) async {
+    await repo.updateCart(val, id);
+    await init(); // Refresh the cart items
+    ProductCubit.instance.init();
+    emit(CartLoaded()); // Refresh products in product cubit
   }
+
+  // Future<void> removeItemFromCart(int id, int val) async {
+  //   await repo.updateCart(0, id);
+  //   await init(); // Refresh the cart items
+  //   ProductCubit.instance.init();
+  //   emit(CartLoaded()); // Refresh products in product cubit
 }

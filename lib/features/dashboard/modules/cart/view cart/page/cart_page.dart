@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project_fcii/features/dashboard/modules/cart/controller/cubit/cart_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/cart/view%20cart/components/cart_widget.dart';
 import 'package:project_fcii/features/dashboard/modules/favourites/controller/cubit/favourite_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
-import 'package:project_fcii/features/dashboard/modules/favourites/view%20favourite/components/favourite_widget.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -17,9 +17,9 @@ class CartPage extends StatelessWidget {
         builder: (context, state) {
           final CartCubit controller = context.read<CartCubit>();
           return Scaffold(
-            body: state is ProductLoading
+            body: state is CartLoading
                 ? const CircularProgressIndicator()
-                : state is ProductEmpty
+                : state is CartEmpty
                     ? const Center(
                         child: Icon(
                           CupertinoIcons.delete,

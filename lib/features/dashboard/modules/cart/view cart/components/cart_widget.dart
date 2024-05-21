@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_fcii/features/dashboard/modules/cart/controller/cubit/cart_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/model/entity/product_model.dart';
 import 'package:project_fcii/features/dashboard/modules/favourites/controller/cubit/favourite_cubit.dart';
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
@@ -97,9 +98,18 @@ class CartItemWidget extends StatelessWidget {
                                   )
                                 : const Icon(
                                     CupertinoIcons.cart,
-                                    color: Colors.blue,
+                                    color: Colors.grey,
                                   ),
-                            onTap: () {},
+                            onTap: () {
+                              // Add to cart or remove from cart
+                              if (productModel.cart == 1) {
+                                controller.addItemToCart(
+                                    productModel.id ?? 0, 0);
+                              } else {
+                                controller.addItemToCart(
+                                    productModel.id ?? 0, 1);
+                              }
+                            },
                           ),
                           Container(
                             height: 30,

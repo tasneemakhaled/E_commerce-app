@@ -12,14 +12,14 @@ class FavouritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CartCubit.instance,
-      child: BlocBuilder<CartCubit, CartState>(
+      create: (context) => FavouriteCubit.instance,
+      child: BlocBuilder<FavouriteCubit, FavouriteState>(
         builder: (context, state) {
-          final CartCubit controller = context.read<CartCubit>();
+          final FavouriteCubit controller = context.read<FavouriteCubit>();
           return Scaffold(
-            body: state is ProductLoading
+            body: state is FavouriteLoading
                 ? const CircularProgressIndicator()
-                : state is ProductEmpty
+                : state is FavouriteEmpty
                     ? const Center(
                         child: Icon(
                           CupertinoIcons.delete,

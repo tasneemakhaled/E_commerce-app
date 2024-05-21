@@ -1,10 +1,10 @@
 part of 'favourite_cubit.dart';
 
 @immutable
-sealed class CartState {}
+sealed class FavouriteState {}
 
-final class FavouriteLoading extends CartState {}
+final class FavouriteLoading extends FavouriteState {}
 
-final class FavouriteLoaded extends CartState {}
+final class FavouriteLoaded extends FavouriteState {}
 
-final class FavouriteEmpty extends CartState {}
+final class FavouriteEmpty extends FavouriteState {}
