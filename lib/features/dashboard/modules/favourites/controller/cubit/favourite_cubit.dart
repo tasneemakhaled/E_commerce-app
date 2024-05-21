@@ -6,9 +6,9 @@ import 'package:project_fcii/features/dashboard/modules/model/repo/local_db_data
 import 'package:project_fcii/features/dashboard/modules/products/controller/cubit/product_cubit.dart';
 part 'favourite_state.dart';
 
-class CartCubit extends Cubit<CartState> {
-  static CartCubit instance = CartCubit();
-  CartCubit() : super(FavouriteLoading()) {
+class FavouriteCubit extends Cubit<FavouriteState> {
+  static FavouriteCubit instance = FavouriteCubit();
+  FavouriteCubit() : super(FavouriteLoading()) {
     init();
   }
   List<ProductModel> products = [];

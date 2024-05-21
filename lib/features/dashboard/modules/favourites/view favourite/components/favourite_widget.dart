@@ -10,7 +10,7 @@ class FavouriteItemWidget extends StatelessWidget {
   const FavouriteItemWidget(
       {super.key, required this.productModel, required this.controller});
   final ProductModel productModel;
-  final CartCubit controller;
+  final FavouriteCubit controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
