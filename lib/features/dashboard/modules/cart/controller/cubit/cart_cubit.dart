@@ -39,7 +39,7 @@ class CartCubit extends Cubit<CartState> {
   Future<void> addItemToCart(int id, int val) async {
     await repo.updateCart(val, id);
     await init(); // Refresh the cart items
-    ProductCubit.instance.init();
+    await ProductCubit.instance.init();
     emit(CartLoaded()); // Refresh products in product cubit
   }
 

@@ -44,7 +44,7 @@ class DashbordPage extends StatelessWidget {
                 ProductPage(),
                 FavouritePage(),
                 CartPage(),
-                Text('Cart'),
+                //Text('Cart'),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(

@@ -11,15 +11,15 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CartCubit.instance,
+    return BlocProvider.value(
+      value: CartCubit.instance,
       child: BlocBuilder<CartCubit, CartState>(
         builder: (context, state) {
           final CartCubit controller = context.read<CartCubit>();
           return Scaffold(
-            body: state is CartLoading
+            body: state is ProductLoading
                 ? const CircularProgressIndicator()
-                : state is CartEmpty
+                : state is ProductEmpty
                     ? const Center(
                         child: Icon(
                           CupertinoIcons.delete,
